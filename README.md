@@ -1,2 +1,3 @@
-# tinlake-auth
-Solidity authorization, based on ds-auth  https://dapp.tools/dappsys/ds-auth.html
+# Tinlake Auth
+
+Solidity authorization pattern, based on the MakerDAO dss ward pattern 
