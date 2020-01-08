@@ -1,4 +1,4 @@
-// Copyright (C) Centrifuge 2020
+// Copyright (C) Centrifuge 2020, based on MakerDAO dss https://github.com/makerdao/dss
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as published by
