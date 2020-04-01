@@ -15,7 +15,7 @@
 
 pragma solidity >=0.5.3;
 
-import "tinlake-note/note.sol";
+import "ds-note/note.sol";
 
 contract Auth is DSNote {
     mapping (address => uint) public wards;
