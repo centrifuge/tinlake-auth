@@ -15,11 +15,24 @@
 
 pragma solidity >=0.5.15;
 
-import "ds-note/note.sol";
+contract Auth {
+    mapping (address => uint256) public wards;
+    
+    event Rely(address indexed usr);
+    event Deny(address indexed usr);
 
-contract Auth is DSNote {
-    mapping (address => uint) public wards;
-    function rely(address usr) public auth note { wards[usr] = 1; }
-    function deny(address usr) public auth note { wards[usr] = 0; }
-    modifier auth { require(wards[msg.sender] == 1); _; }
+    function rely(address usr) external auth {
+        wards[usr] = 1;
+        emit Rely(usr);
+    }
+    function deny(address usr) external auth {
+        wards[usr] = 0;
+        emit Deny(usr);
+    }
+
+    modifier auth {
+        require(wards[msg.sender] == 1, "not-authorized");
+        _;
+    }
+
 }
